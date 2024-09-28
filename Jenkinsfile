@@ -59,7 +59,7 @@ pipeline {
 
         stage('Deploy to Kubernetes'){
             steps{
-                kubernetesDeploy (configs: 'deployment-service.yml', kubeconfigId: 'kubernetes')
+                kubernetesDeploy (configs: 'deployment-service.yml', kubeconfigId: 'kubernetes' namespace: 'devops-jenkins-app')
             }
         }
 
